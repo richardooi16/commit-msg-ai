@@ -18,8 +18,9 @@ client = OpenAI(
 MODEL_NAME = "gpt-4o-mini"
 INSTRUCTIONS = """Write a commit message based on the git diff and git branch provided.
 The format used should start with the type (feat, fix, chore), followed by the commit message. 
-At the end, add the git branch name to the end of the message." 
-The format for the commit should be:" 
+At the end, add the git branch name to the end of the message.
+Make sure that there are no extra lines added.
+The format for the commit should be:
 '\\{type\\}: {commit message} - {branch name}'"""
 
 class GitOperationError(Exception):
